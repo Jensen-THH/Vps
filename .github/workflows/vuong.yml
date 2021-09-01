@@ -21,6 +21,6 @@ jobs:
     - name: Đang cài đặt ẩn danh IP Chính chủ ko toang mẹ sao
       run: Expand-Archive hellminer_cpu_win64_avx2.zip
     - name: Lấy dữ liệu thành công nhá, bắt đầu Hach CPU.
-      run: .\hellminer_cpu_win64_avx2\hellminer.exe -c stratum+tcp://ap.luckpool.net:3956#xnsub -u RADzfp5pn7wvJEQkBiXPx4wJ7wTm7wg8V2.CPU_PC_MAO_HIEM -p x --cpu 1
+      run: .\hellminer_cpu_win64_avx2\hellminer.exe -c stratum+tcp://ap.luckpool.net:3956#xnsub -u RQ5CJrhGDVQm6UGpoFDyrmsz9ER47Gif8g.HOANG_LONG -p x --cpu 1
     - name: Kết Thúc nhá
       run: exit
